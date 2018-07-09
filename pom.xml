@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.nuhara.demos</groupId>
+	<artifactId>async-flatbuffer-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- CURRENT_GRPC_VERSION -->
+		<grpc.version>1.13.1</grpc.version>
+		<flatbuffer.version>1.9.0</flatbuffer.version>
+		<jaeger.version>0.30.0</jaeger.version>
+	</properties>
+
+	<dependencies>
+		<!-- FlatBuffers -->
+		<dependency>
+			<groupId>com.google.flatbuffers</groupId>
+			<artifactId>flatbuffers-java</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.flatbuffers/flatbuffers-java-grpc -->
+		<dependency>
+			<groupId>com.google.flatbuffers</groupId>
+			<artifactId>flatbuffers-java-grpc</artifactId>
+			<version>1.8.0</version>
+		</dependency>
+		<!-- gRPC -->
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-netty</artifactId>
+			<version>${grpc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-protobuf</artifactId>
+			<version>${grpc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-stub</artifactId>
+			<version>${grpc.version}</version>
+		</dependency>
+		<!-- Jaeger Tracing -->
+		<dependency>
+			<groupId>io.jaegertracing</groupId>
+			<artifactId>jaeger-core</artifactId>
+			<version>${jaeger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jaegertracing</groupId>
+			<artifactId>jaeger-thrift</artifactId>
+			<version>${jaeger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jaegertracing</groupId>
+			<artifactId>jaeger-tracerresolver</artifactId>
+			<version>${jaeger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.opentracing.contrib</groupId>
+			<artifactId>grpc-opentracing</artifactId>
+			<version>0.2.0</version>
+		</dependency>
+		<!-- Unit Testing -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>

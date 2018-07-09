@@ -1,0 +1,19 @@
+
+namespace org.nuhara.demos.flatbuffer;
+
+table Request {
+	mti:string;
+	rrn:string;
+	message:string;
+}
+
+table Response {
+	mti:string;
+	rrn:string;
+	responseCode:string;
+	authorizationCode:string;
+}
+
+rpc_service ISOService {
+	Process(Request):Response (streaming: "server");
+}
